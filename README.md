@@ -1,9 +1,9 @@
 # 🏆 LMA Bridge - AI-Powered Loan Lifecycle Management Platform
 
-> **Winner of LMA Edge Hackathon 2025** - Transforming the multi-trillion dollar loan market through AI automation, real-time monitoring, and sustainability integration.
+> **LMA Edge Hackathon** - Transforming the multi-trillion dollar loan market through AI automation, real-time monitoring, and sustainability integration.
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Now-blue?style=for-the-badge)](https://lma-bridge.vercel.app)
-[![LMA Edge Hackathon](https://img.shields.io/badge/🏆_LMA_Edge-Hackathon_2025-gold?style=for-the-badge)](https://lma-edge-hackathon.devpost.com)
+[![LMA Edge Hackathon](https://img.shields.io/badge/🏆_LMA_Edge-Hackathon-gold?style=for-the-badge)](https://lmaedgehackathon.devpost.com)
 
 ## 🎯 **Executive Summary**
 
@@ -287,7 +287,6 @@ npm run lint     # Code quality checks
 ---
 
 
-```
 
 ### **Environment Setup**
 **🎉 No API keys or environment variables required!** 
@@ -330,23 +329,14 @@ Located in `/sample-documents/` folder:
 
 ---
 
-## 🏆 **Awards & Recognition**
-
-- **🥇 LMA Edge Hackathon Winner** - Best Overall Solution (2025)
-- **🏅 Innovation Award** - AI-Powered Document Processing
-- **🌟 Sustainability Award** - ESG Integration Excellence
-- **💡 Technical Excellence** - Production-Ready Implementation
-
----
-
 ## 👥 **Team & Contact**
 
-**Built for LMA Edge Hackathon 2025**
+**Built for LMA Edge Hackathon**
 
-- **Developer**: [Your Name]
-- **Email**: [your.email@domain.com]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **GitHub**: [Your GitHub Profile]
+- **Developer**: Aniket Mehra
+- **Email**: aniketmehra715@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/aniket-mehra-6a8aaa23a/
+- **GitHub**: https://github.com/Anshulmehra001
 
 ---
 
@@ -369,8 +359,8 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 ### 🚀 **Ready to Transform Loan Markets?**
 
-**[🌐 Try Live Demo](https://lma-bridge.vercel.app)** | **[📧 Contact Us](mailto:your.email@domain.com)** | **[⭐ Star on GitHub](https://github.com/yourusername/lma-bridge)**
+**[🌐 Try Live Demo](https://lma-bridge.vercel.app)** | **[📧 Contact Us](mailto:your.email@domain.com)** | **[⭐ Star on GitHub](https://github.com/Anshulmehra001/LMA-Bridge---AI-Powered-Syndicated-Loan-Lifecycle-Platform)**
 
-*Built with ❤️ for the LMA Edge Hackathon 2025*
+*Built for the LMA Edge Hackathon 2025*
 
 </div>
