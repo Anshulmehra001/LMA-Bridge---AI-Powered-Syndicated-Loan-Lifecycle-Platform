@@ -46,7 +46,6 @@ export interface ApplicationState {
   esgStatus: ESGStatus;
   riskStatus: RiskStatus;
   tradingStatus: TradingStatus;
-  demoMode: boolean;
 }
 
 export interface FormFieldState {
@@ -254,9 +253,9 @@ export const validateLoanData = (data: Partial<LoanData>): ValidationResult => {
 };
 
 // Helper function to validate individual fields
-export const validateField = (fieldName: keyof LoanData, value: any): ValidationResult => {
+export const validateField = (fieldName: keyof LoanData, value: unknown): ValidationResult => {
   const partialData: Partial<LoanData> = {};
-  partialData[fieldName] = value;
+  (partialData as any)[fieldName] = value;
   const result = validateLoanData(partialData);
   
   // Filter errors to only include those for the specific field
@@ -286,7 +285,7 @@ export const sanitizeString = (input: string): string => {
     .trim();
 };
 
-export const sanitizeNumber = (input: any): number | null => {
+export const sanitizeNumber = (input: unknown): number | null => {
   if (typeof input === 'number' && !isNaN(input) && isFinite(input)) {
     return input;
   }
@@ -412,6 +411,41 @@ export const getUserFriendlyError = (error: APIError | Error | string): UserFrie
         action: 'Please check your internet connection'
       };
     
+    case 'INVALID_API_KEY':
+      return {
+        title: 'API Configuration Error',
+        message: 'The AI service API key is invalid. Using demo data instead.',
+        action: 'Please contact your administrator to update the API key'
+      };
+    
+    case 'QUOTA_EXCEEDED':
+      return {
+        title: 'AI Service Daily Limit Reached',
+        message: 'You\'ve reached the free tier daily quota (1,500 requests). The application is working perfectly with demo data.',
+        action: 'Wait for daily reset, create a new API key, or use manual data entry (which works great!)'
+      };
+    
+    case 'MODEL_NOT_FOUND':
+      return {
+        title: 'Service Configuration Error',
+        message: 'AI model not available. Using demo data instead.',
+        action: 'Please contact your administrator'
+      };
+    
+    case 'PERMISSION_DENIED':
+      return {
+        title: 'Access Denied',
+        message: 'Access to AI service denied. Using demo data instead.',
+        action: 'Please contact your administrator to check permissions'
+      };
+    
+    case 'NO_WORKING_MODEL':
+      return {
+        title: 'AI Service Unavailable',
+        message: 'No AI models are currently available. Using demo data instead.',
+        action: 'Please try again later or use manual data entry'
+      };
+    
     default:
       return {
         title: 'Unexpected Error',
@@ -432,4 +466,8 @@ export interface AnalyzeLoanResponse {
   error?: string;
   isMockData: boolean;
   validationErrors?: string[];
+  confidence?: number;
+  suggestions?: string[];
+  processingTime?: number;
+  extractedFields?: string[];
 }

@@ -35,27 +35,31 @@ export function ValidatedInput({
   const [validationResult, setValidationResult] = useState<ValidationResult>({ isValid: true, errors: [] });
   const [hasBeenTouched, setHasBeenTouched] = useState(false);
 
-  // Validate the current value
+  // Validate when the external value prop changes (for controlled components)
   useEffect(() => {
-    if (validateOnChange && hasBeenTouched) {
+    if (hasBeenTouched) {
       const result = validateField(fieldName, value);
-      if (result.isValid !== validationResult.isValid || result.errors.length !== validationResult.errors.length) {
-        setValidationResult(result);
-        onValidation?.(result);
-      }
+      setValidationResult(prevResult => {
+        if (prevResult.isValid !== result.isValid || prevResult.errors.length !== result.errors.length) {
+          onValidation?.(result);
+          return result;
+        }
+        return prevResult;
+      });
     }
-  }, [fieldName, value, validateOnChange, hasBeenTouched, validationResult.isValid, validationResult.errors.length, onValidation]);
+  }, [fieldName, value, hasBeenTouched, onValidation]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const newValue = e.target.value;
-    setHasBeenTouched(true);
     
     // Convert to number for numeric fields
     const processedValue = ['facilityAmount', 'interestRateMargin', 'leverageCovenant'].includes(fieldName)
       ? (newValue === '' ? 0 : parseFloat(newValue) || 0)
       : newValue;
     
-    // Validate immediately on change
+    // Mark as touched and validate immediately
+    setHasBeenTouched(true);
+    
     if (validateOnChange) {
       const result = validateField(fieldName, processedValue);
       setValidationResult(result);
@@ -119,8 +123,8 @@ interface ValidatedFormProps {
 }
 
 export function ValidatedForm({ children, onValidationChange, className = '' }: ValidatedFormProps) {
-  const [formErrors, setFormErrors] = useState<string[]>([]);
-  const [isFormValid, setIsFormValid] = useState(true);
+  const [formErrors] = useState<string[]>([]);
+  const [isFormValid] = useState(true);
 
   useEffect(() => {
     onValidationChange?.(isFormValid, formErrors);

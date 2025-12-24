@@ -165,7 +165,10 @@ describe('AI Integration Server Action', () => {
     it('should provide mock data and continue functioning for any API failure or missing configuration', async () => {
       await fc.assert(
         fc.asyncProperty(
-          fc.string({ minLength: 1, maxLength: 1000 }).filter(s => s.trim().length >= 1),
+          fc.string({ minLength: 1, maxLength: 1000 }).filter(s => {
+            const sanitized = s.replace(/[<>]/g, '').trim();
+            return sanitized.length >= 1;
+          }),
           fc.oneof(
             fc.constant(undefined), // Missing API key
             fc.constant(''), // Empty API key

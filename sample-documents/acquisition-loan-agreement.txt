@@ -1,0 +1,151 @@
+TERM LOAN CREDIT AGREEMENT
+
+This Term Loan Credit Agreement ("Agreement") is entered into as of December 10, 2025, between GLOBAL MANUFACTURING CORP, a Delaware corporation (the "Borrower"), and the lenders party hereto (the "Lenders").
+
+ARTICLE I - CREDIT FACILITY
+
+The Lenders agree to provide a term loan facility in the aggregate principal amount of SEVEN HUNDRED FIFTY MILLION DOLLARS ($750,000,000) denominated in United States Dollars (USD) for the acquisition of Industrial Components Ltd.
+
+ARTICLE II - INTEREST RATE AND FEES
+
+Interest Rate: Term SOFR plus 4.50% per annum, subject to adjustment based on leverage ratio:
+
+Leverage-Based Pricing Grid:
+- Total Leverage Ratio ≥ 5.00x: SOFR + 4.50%
+- Total Leverage Ratio < 5.00x but ≥ 4.50x: SOFR + 4.25%
+- Total Leverage Ratio < 4.50x but ≥ 4.00x: SOFR + 4.00%
+- Total Leverage Ratio < 4.00x: SOFR + 3.75%
+
+Upfront Fee: 1.00% of facility amount
+Commitment Fee: 0.50% per annum on undrawn amounts
+
+ARTICLE III - MATURITY AND AMORTIZATION
+
+Maturity Date: December 10, 2032 (7 years)
+
+Mandatory Amortization Schedule:
+- Years 1-2: 5% per annum ($37,500,000 annually)
+- Years 3-4: 7.5% per annum ($56,250,000 annually)
+- Years 5-6: 10% per annum ($75,000,000 annually)
+- Year 7: Remaining balance due at maturity
+
+ARTICLE IV - FINANCIAL COVENANTS
+
+The Borrower shall maintain:
+
+Maximum Total Leverage Ratio:
+- Through December 31, 2026: 5.50:1.00
+- Through December 31, 2027: 5.25:1.00
+- Through December 31, 2028: 5.00:1.00
+- Thereafter: 4.75:1.00
+
+Minimum Interest Coverage Ratio: 3.00:1.00
+Maximum Capital Expenditures: $50,000,000 per fiscal year (excluding acquisition-related capex)
+
+ARTICLE V - ACQUISITION TERMS AND CONDITIONS
+
+Target Company: Industrial Components Ltd. (UK-based manufacturing company)
+Purchase Price: $850,000,000 (including assumed debt)
+Equity Contribution: Minimum $100,000,000 from Borrower
+
+Conditions Precedent to Acquisition:
+(a) Completion of satisfactory due diligence
+(b) Receipt of all required regulatory approvals
+(c) No material adverse change in target company
+(d) Execution of management retention agreements
+(e) Obtaining required insurance coverage
+
+ARTICLE VI - REPRESENTATIONS AND WARRANTIES
+
+Standard representations plus acquisition-specific warranties:
+(a) Accuracy of all due diligence materials provided
+(b) No material pending litigation affecting target company
+(c) Compliance with all antitrust and competition laws
+(d) Accuracy of pro forma financial projections
+(e) Validity of acquisition purchase agreement
+
+ARTICLE VII - COVENANTS
+
+Affirmative Covenants:
+(a) Integration planning and execution oversight
+(b) Monthly reporting during first 12 months post-acquisition
+(c) Maintenance of target company's key customer relationships
+(d) Retention of target company's senior management team
+(e) Achievement of specified synergy targets ($25,000,000 annually by Year 2)
+
+Negative Covenants:
+(a) No additional acquisitions exceeding $25,000,000 without consent
+(b) No asset sales exceeding $50,000,000 without consent
+(c) Restricted payments limited to $10,000,000 annually
+(d) No changes to target company's core business operations
+
+ARTICLE VIII - MANDATORY PREPAYMENTS
+
+Mandatory prepayment required from:
+(a) 100% of net proceeds from asset sales exceeding $10,000,000
+(b) 100% of net proceeds from debt issuances
+(c) 50% of excess cash flow (as defined) if leverage ratio exceeds 4.50x
+(d) 100% of insurance proceeds exceeding $5,000,000
+
+ARTICLE IX - SECURITY PACKAGE
+
+First Priority Liens on:
+- All assets of Borrower and material subsidiaries
+- 100% of equity interests in target company
+- All intellectual property and technology assets
+- Intercompany notes and receivables
+
+Guarantees:
+- Full and unconditional guarantee by all material subsidiaries
+- Upstream guarantee by target company post-acquisition
+
+ARTICLE X - EVENTS OF DEFAULT
+
+Standard events of default plus:
+(a) Failure to complete acquisition by March 31, 2026
+(b) Material breach of acquisition purchase agreement
+(c) Loss of key customer contracts representing >15% of target company revenue
+(d) Failure to achieve minimum synergy targets by specified dates
+(e) Material environmental liability exceeding $15,000,000
+
+ARTICLE XI - GOVERNING LAW AND JURISDICTION
+
+This Agreement shall be governed by New York law, with exclusive jurisdiction in New York state and federal courts.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+GLOBAL MANUFACTURING CORP
+
+By: /s/ Thomas Anderson
+Name: Thomas Anderson
+Title: Chief Executive Officer
+
+By: /s/ Patricia Williams
+Name: Patricia Williams
+Title: Chief Financial Officer
+
+LENDERS:
+
+JPMORGAN CHASE BANK, N.A., as Administrative Agent and Lead Arranger
+
+By: /s/ Mark Thompson
+Name: Mark Thompson
+Title: Managing Director
+
+GOLDMAN SACHS BANK USA, as Joint Lead Arranger and Lender
+
+By: /s/ Rachel Green
+Name: Rachel Green
+Title: Managing Director
+
+MORGAN STANLEY SENIOR FUNDING, INC., as Lender
+
+By: /s/ Andrew Miller
+Name: Andrew Miller
+Title: Director
+
+CREDIT SUISSE AG, NEW YORK BRANCH, as Lender
+
+By: /s/ Klaus Weber
+Name: Klaus Weber
+Title: Vice President

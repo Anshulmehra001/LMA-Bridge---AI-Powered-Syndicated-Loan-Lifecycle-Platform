@@ -1,0 +1,182 @@
+COMMERCIAL REAL ESTATE CONSTRUCTION LOAN AGREEMENT
+
+This Construction Loan Agreement ("Agreement") is entered into as of December 5, 2025, between PROPERTY DEVELOPMENT LLC, a Delaware limited liability company (the "Borrower"), and the lenders party hereto (the "Lenders").
+
+ARTICLE I - CONSTRUCTION LOAN FACILITY
+
+The Lenders agree to provide a construction-to-permanent loan facility in the aggregate principal amount of TWO HUNDRED MILLION DOLLARS ($200,000,000) denominated in United States Dollars (USD) for the development of Metropolitan Office Complex.
+
+ARTICLE II - PROJECT DESCRIPTION
+
+Project: Metropolitan Office Complex
+Location: 1500 Corporate Boulevard, Austin, Texas
+Description: 850,000 square foot Class A office building with retail component
+Total Project Cost: $240,000,000
+Borrower Equity: $40,000,000 (minimum 16.7%)
+
+ARTICLE III - INTEREST RATE AND FEES
+
+Construction Phase Interest Rate: Prime Rate plus 1.75% per annum
+Permanent Phase Interest Rate: 10-Year Treasury Rate plus 2.25% per annum
+
+Fees:
+- Loan Origination Fee: 1.25% of facility amount
+- Inspection Fee: $2,500 per inspection
+- Legal and Administrative Fees: $75,000
+
+ARTICLE IV - LOAN PHASES
+
+Phase 1: Construction Phase (24 months maximum)
+- Interest-only payments monthly
+- Funds advanced based on construction progress
+- Professional cost certification required for each draw
+
+Phase 2: Permanent Phase (25 years amortization)
+- Principal and interest payments monthly
+- Conversion automatic upon completion and stabilization
+- Minimum debt service coverage ratio: 1.25x
+
+ARTICLE V - CONSTRUCTION DRAW PROCEDURES
+
+Draw Requirements:
+(a) AIA Form G702/G703 Application and Certificate for Payment
+(b) Architect's certificate of work completion
+(c) General contractor's sworn statement and lien waivers
+(d) Borrower's certificate of compliance with loan covenants
+(e) Title company endorsement (for draws exceeding $5,000,000)
+
+Maximum Draw Frequency: Monthly
+Minimum Draw Amount: $1,000,000
+Retainage: 10% until 50% completion, then 5%
+
+ARTICLE VI - FINANCIAL COVENANTS
+
+During Construction Phase:
+- Minimum liquidity: $15,000,000
+- Maximum loan-to-cost ratio: 83.3%
+- Completion guarantee from principals
+
+During Permanent Phase:
+- Minimum debt service coverage ratio: 1.25x
+- Maximum loan-to-value ratio: 75%
+- Minimum occupancy rate: 85% (after stabilization period)
+
+ARTICLE VII - CONSTRUCTION REQUIREMENTS
+
+General Contractor: Must be approved by Lender
+- Minimum 10 years experience in similar projects
+- Bonding capacity of at least $250,000,000
+- Payment and performance bonds required (100% of contract amount)
+
+Architect: Must be licensed and experienced in commercial office development
+Construction Contract: Guaranteed maximum price contract required
+Permits: All required permits must be obtained before first draw
+
+ARTICLE VIII - LEASING REQUIREMENTS
+
+Pre-Leasing Requirements:
+- Minimum 40% pre-leased before conversion to permanent loan
+- Average lease term minimum 7 years
+- Tenant credit quality acceptable to Lender
+- No single tenant to exceed 25% of net rentable area
+
+Property Management:
+- Professional property management company required
+- Management agreement subject to Lender approval
+- Monthly operating statements required
+
+ARTICLE IX - INSURANCE REQUIREMENTS
+
+Required Insurance Coverage:
+- Builder's risk insurance: Full replacement cost
+- General liability: $5,000,000 per occurrence
+- Professional liability: $2,000,000 (architect and engineer)
+- Environmental liability: $10,000,000
+- Flood insurance: If applicable per FEMA maps
+
+All policies must name Lender as additional insured and loss payee.
+
+ARTICLE X - ENVIRONMENTAL COMPLIANCE
+
+Environmental Requirements:
+(a) Phase I Environmental Site Assessment completed and acceptable
+(b) No known environmental contamination
+(c) Compliance with all applicable environmental laws
+(d) LEED Silver certification minimum required
+(e) Environmental compliance certificate at completion
+
+ARTICLE XI - COMPLETION AND STABILIZATION
+
+Completion Requirements:
+- Certificate of occupancy obtained
+- All construction substantially complete per plans and specifications
+- All mechanical systems operational and warranted
+- Parking facilities completed and operational
+- Landscaping and site work completed
+
+Stabilization Requirements:
+- Minimum 85% occupancy achieved
+- Debt service coverage ratio of 1.25x demonstrated for 3 consecutive months
+- All tenant improvement work completed
+- Property management systems fully operational
+
+ARTICLE XII - SECURITY AND COLLATERAL
+
+First Mortgage Lien on:
+- Real property and all improvements
+- All rents, leases, and profits from the property
+- All insurance proceeds and condemnation awards
+- Construction contracts and architect agreements
+- All permits, licenses, and approvals
+
+Additional Security:
+- Assignment of all construction contracts
+- Assignment of architect and engineer agreements
+- UCC-1 financing statements on all personal property
+- Environmental indemnity from principals
+
+ARTICLE XIII - EVENTS OF DEFAULT
+
+Construction-Specific Defaults:
+(a) Failure to commence construction within 90 days
+(b) Work stoppage exceeding 30 consecutive days
+(c) Failure to achieve substantial completion within 30 months
+(d) Cost overruns exceeding 10% without additional equity
+(e) Loss of required permits or approvals
+(f) Contractor default or abandonment
+
+ARTICLE XIV - GOVERNING LAW
+
+This Agreement shall be governed by the laws of the State of Texas.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+PROPERTY DEVELOPMENT LLC
+
+By: /s/ James Mitchell
+Name: James Mitchell
+Title: Managing Member
+
+By: /s/ Susan Parker
+Name: Susan Parker
+Title: Chief Financial Officer
+
+LENDERS:
+
+TEXAS CAPITAL BANK, N.A., as Administrative Agent and Lead Lender
+
+By: /s/ Robert Johnson
+Name: Robert Johnson
+Title: Senior Vice President, Commercial Real Estate
+
+COMERICA BANK, as Lender
+
+By: /s/ Mary Stevens
+Name: Mary Stevens
+Title: Vice President, CRE Lending
+
+FROST BANK, as Lender
+
+By: /s/ Carlos Rodriguez
+Name: Carlos Rodriguez
+Title: Assistant Vice President

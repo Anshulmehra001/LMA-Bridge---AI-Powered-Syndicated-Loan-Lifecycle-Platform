@@ -69,31 +69,31 @@ describe('Final Integration Tests - Complete LMA Bridge Workflow', () => {
     test('should execute origination workflow successfully', async () => {
       renderApp();
 
-      // Enable demo mode for consistent testing
-      fireEvent.click(screen.getByRole('button', { name: /toggle demo/i }));
+      // Use sample data for consistent testing
+      fireEvent.click(screen.getByText('Use Sample'));
       
-      // Verify demo mode is active
+      // Verify sample data is loaded
+      const textArea = screen.getByPlaceholderText(/paste your loan agreement/i);
       await waitFor(() => {
-        expect(screen.getByText(/demo mode/i)).toBeInTheDocument();
+        expect(textArea.value).toContain('REVOLVING CREDIT AGREEMENT');
+        expect(textArea.value).toContain('TECHCORP INDUSTRIES INC.');
       });
 
-      // Analyze the pre-filled demo document
+      // Analyze the sample document
       fireEvent.click(screen.getByRole('button', { name: /analyze/i }));
 
       // Wait for analysis to complete and form to be populated
       await waitFor(() => {
-        expect(screen.getByDisplayValue('ACME Corporation')).toBeInTheDocument();
-        expect(screen.getByDisplayValue(/250[,.]000[,.]000/)).toBeInTheDocument();
+        expect(screen.getByDisplayValue('TECHCORP INDUSTRIES INC.')).toBeInTheDocument();
+        expect(screen.getByDisplayValue(/500[,.]000[,.]000/)).toBeInTheDocument();
         expect(screen.getByDisplayValue('USD')).toBeInTheDocument();
         expect(screen.getByDisplayValue('2.75')).toBeInTheDocument();
-        expect(screen.getByDisplayValue('4.5')).toBeInTheDocument();
+        expect(screen.getByDisplayValue('4.25')).toBeInTheDocument();
       });
 
-      // Verify and lock the data
-      fireEvent.click(screen.getByRole('button', { name: /verify & lock/i }));
-
+      // Check success message
       await waitFor(() => {
-        expect(screen.getByText(/verified/i)).toBeInTheDocument();
+        expect(screen.getByText('Smart AI Extraction Successful')).toBeInTheDocument();
       });
     }, 10000);
 
@@ -122,40 +122,66 @@ describe('Final Integration Tests - Complete LMA Bridge Workflow', () => {
       fireEvent.click(screen.getByRole('button', { name: /analyze/i }));
 
       await waitFor(() => {
-        // Should show demo data warning
-        const demoDataElements = screen.getAllByText(/using demo data/i);
-        expect(demoDataElements.length).toBeGreaterThan(0);
+        // Should show fallback data
         expect(screen.getByDisplayValue('Acme Corporation Ltd')).toBeInTheDocument();
+      });
+    });
+
+    test('should support manual data entry mode', async () => {
+      renderApp();
+
+      // Switch to manual data entry mode by clicking on the manual data entry card
+      const manualModeCard = screen.getByText('Manual Data Entry').closest('div');
+      fireEvent.click(manualModeCard!);
+
+      // Fill in manual data
+      fireEvent.change(screen.getByLabelText('Borrower Name *'), { 
+        target: { value: 'Manual Test Corp' } 
+      });
+      fireEvent.change(screen.getByLabelText('Facility Amount *'), { 
+        target: { value: '75000000' } 
+      });
+      fireEvent.change(screen.getByLabelText('Interest Rate Margin (%) *'), { 
+        target: { value: '3.25' } 
+      });
+      fireEvent.change(screen.getByLabelText('Leverage Covenant *'), { 
+        target: { value: '5.0' } 
+      });
+
+      // Submit manual data
+      fireEvent.click(screen.getByText('Submit Data'));
+
+      await waitFor(() => {
+        expect(screen.getByText('Manual Data Entry Successful')).toBeInTheDocument();
+        expect(screen.getByDisplayValue('Manual Test Corp')).toBeInTheDocument();
       });
     });
   });
 
-  describe('Demo Mode Integration', () => {
-    test('should handle demo mode toggle correctly', async () => {
+  describe('Input Mode Integration', () => {
+    test('should switch between document analysis and manual entry modes', async () => {
       renderApp();
 
-      // Initially in live mode
-      expect(screen.getByText('Live Mode')).toBeInTheDocument();
+      // Initially in document mode
+      expect(screen.getByText('Document Analysis')).toBeInTheDocument();
+      expect(screen.getByText('Choose File')).toBeInTheDocument();
 
-      // Toggle to demo mode
-      fireEvent.click(screen.getByRole('button', { name: /toggle demo/i }));
+      // Switch to manual mode by clicking on the manual data entry card
+      const manualModeCard = screen.getByText('Manual Data Entry').closest('div');
+      fireEvent.click(manualModeCard!);
 
       await waitFor(() => {
-        expect(screen.getByText('Demo Mode')).toBeInTheDocument();
+        expect(screen.getByLabelText('Borrower Name *')).toBeInTheDocument();
+        expect(screen.getByLabelText('Facility Amount *')).toBeInTheDocument();
       });
 
-      // Verify demo data is pre-filled
-      const textArea = screen.getByPlaceholderText(/paste your loan agreement/i);
-      expect(textArea.value).toContain('CREDIT AGREEMENT');
-      expect(textArea.value).toContain('ACME CORPORATION');
-
-      // Toggle back to live mode
-      fireEvent.click(screen.getByRole('button', { name: /toggle demo/i }));
+      // Switch back to document mode by clicking on the AI document analysis card
+      const documentModeCard = screen.getByText('AI Document Analysis').closest('div');
+      fireEvent.click(documentModeCard!);
 
       await waitFor(() => {
-        expect(screen.getByText('Live Mode')).toBeInTheDocument();
-        // Text area should be cleared
-        expect(textArea.value).toBe('');
+        expect(screen.getByText('Choose File')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText(/paste your loan agreement/i)).toBeInTheDocument();
       });
     });
   });
@@ -179,7 +205,7 @@ describe('Final Integration Tests - Complete LMA Bridge Workflow', () => {
       expect(screen.getByRole('button', { name: /analyze/i })).toBeInTheDocument();
 
       // Check footer
-      expect(screen.getByText(/© 2024 LMA Bridge/)).toBeInTheDocument();
+      expect(screen.getByText(/LMA Bridge.*Syndicated Loan/)).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /toggle demo/i })).toBeInTheDocument();
     });
 

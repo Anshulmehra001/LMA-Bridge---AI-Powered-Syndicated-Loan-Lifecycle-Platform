@@ -143,7 +143,7 @@ describe('LMA Bridge Integration Tests', () => {
       expect(screen.getByRole('button', { name: /analyze/i })).toBeInTheDocument();
 
       // Check footer
-      expect(screen.getByText(/© 2024 LMA Bridge/)).toBeInTheDocument();
+      expect(screen.getByText(/LMA Bridge.*Syndicated Loan/)).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /toggle demo/i })).toBeInTheDocument();
     });
 

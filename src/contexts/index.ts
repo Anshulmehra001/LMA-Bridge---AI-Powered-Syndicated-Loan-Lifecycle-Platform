@@ -6,5 +6,4 @@ export {
   useESGStatus,
   useRiskStatus,
   useTradingStatus,
-  useDemoMode,
 } from './ApplicationContext';

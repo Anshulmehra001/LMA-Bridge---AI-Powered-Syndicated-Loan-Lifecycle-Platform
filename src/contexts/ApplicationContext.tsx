@@ -21,7 +21,6 @@ type ApplicationAction =
   | { type: 'UPDATE_INTEREST_RATE_MARGIN'; payload: number }
   | { type: 'UPDATE_CURRENT_LEVERAGE'; payload: number }
   | { type: 'EXECUTE_TRADE'; payload: { sellAmount: number; buyerName: string } }
-  | { type: 'TOGGLE_DEMO_MODE' }
   | { type: 'RESET_STATE' };
 
 // Initial state
@@ -52,7 +51,6 @@ const initialState: ApplicationState = {
     lastTradeTimestamp: null,
     settlementStatus: 'instant',
   },
-  demoMode: false,
 };
 
 // Reducer function
@@ -169,22 +167,6 @@ function applicationReducer(state: ApplicationState, action: ApplicationAction):
         },
       };
 
-    case 'TOGGLE_DEMO_MODE':
-      const newDemoMode = !state.demoMode;
-      if (!newDemoMode) {
-        // When exiting demo mode, reset to initial state
-        return {
-          ...initialState,
-          demoMode: false,
-        };
-      } else {
-        // When entering demo mode, just toggle the flag
-        return {
-          ...state,
-          demoMode: true,
-        };
-      }
-
     case 'RESET_STATE':
       return initialState;
 
@@ -203,7 +185,6 @@ interface ApplicationContextType {
   applyESGDiscount: () => void;
   updateCurrentLeverage: (leverage: number) => void;
   executeTrade: (sellAmount: number, buyerName: string) => void;
-  toggleDemoMode: () => void;
   resetState: () => void;
 }
 
@@ -221,6 +202,14 @@ export function ApplicationProvider({ children }: ApplicationProviderProps) {
   // Helper functions
   const setLoanData = (data: LoanData) => {
     dispatch({ type: 'SET_LOAN_DATA', payload: data });
+    
+    // Log activity
+    console.log('Loan data set:', {
+      borrower: data.borrowerName,
+      amount: data.facilityAmount,
+      currency: data.currency,
+      timestamp: new Date().toISOString()
+    });
   };
 
   const verifyAndLockData = () => {
@@ -232,11 +221,13 @@ export function ApplicationProvider({ children }: ApplicationProviderProps) {
         verificationTimestamp: new Date(),
       },
     });
+    
+    console.log('Data verified and locked at:', new Date().toISOString());
   };
 
   const applyESGDiscount = () => {
     if (state.currentLoan) {
-      const newMargin = Math.max(0, state.currentLoan.interestRateMargin - 0.1);
+      const newMargin = Math.max(0.01, state.currentLoan.interestRateMargin - 0.1);
       dispatch({ type: 'UPDATE_INTEREST_RATE_MARGIN', payload: newMargin });
       dispatch({
         type: 'SET_ESG_STATUS',
@@ -246,23 +237,47 @@ export function ApplicationProvider({ children }: ApplicationProviderProps) {
           verificationUploaded: true,
         },
       });
+      
+      console.log('ESG discount applied:', {
+        oldRate: state.currentLoan.interestRateMargin,
+        newRate: newMargin,
+        savings: state.currentLoan.facilityAmount * 0.001,
+        timestamp: new Date().toISOString()
+      });
     }
   };
 
   const updateCurrentLeverage = (leverage: number) => {
     dispatch({ type: 'UPDATE_CURRENT_LEVERAGE', payload: leverage });
+    
+    // Log risk level changes
+    const leverageCovenant = state.currentLoan?.leverageCovenant || 0;
+    const isInDefault = leverage > leverageCovenant;
+    const warningLevel = isInDefault ? 'breach' : leverage > leverageCovenant * 0.9 ? 'warning' : 'safe';
+    
+    if (isInDefault || warningLevel === 'warning') {
+      console.warn('Risk level changed:', {
+        leverage,
+        covenant: leverageCovenant,
+        status: warningLevel,
+        timestamp: new Date().toISOString()
+      });
+    }
   };
 
   const executeTrade = (sellAmount: number, buyerName: string) => {
     dispatch({ type: 'EXECUTE_TRADE', payload: { sellAmount, buyerName } });
-  };
-
-  const toggleDemoMode = () => {
-    dispatch({ type: 'TOGGLE_DEMO_MODE' });
+    
+    console.log('Trade executed:', {
+      amount: sellAmount,
+      buyer: buyerName,
+      timestamp: new Date().toISOString()
+    });
   };
 
   const resetState = () => {
     dispatch({ type: 'RESET_STATE' });
+    console.log('Application state reset at:', new Date().toISOString());
   };
 
   const contextValue: ApplicationContextType = {
@@ -273,7 +288,6 @@ export function ApplicationProvider({ children }: ApplicationProviderProps) {
     applyESGDiscount,
     updateCurrentLeverage,
     executeTrade,
-    toggleDemoMode,
     resetState,
   };
 
@@ -317,9 +331,4 @@ export function useRiskStatus() {
 export function useTradingStatus() {
   const { state } = useApplication();
   return state.tradingStatus;
-}
-
-export function useDemoMode() {
-  const { state } = useApplication();
-  return state.demoMode;
 }
