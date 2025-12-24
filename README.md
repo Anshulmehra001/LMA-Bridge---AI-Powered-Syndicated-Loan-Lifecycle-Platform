@@ -359,8 +359,8 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 ### 🚀 **Ready to Transform Loan Markets?**
 
-**[🌐 Try Live Demo](https://lma-bridge.vercel.app)** | **[📧 Contact Us](mailto:your.email@domain.com)** | **[⭐ Star on GitHub](https://github.com/Anshulmehra001/LMA-Bridge---AI-Powered-Syndicated-Loan-Lifecycle-Platform)**
+**[🌐 Try Live Demo](https://lma-bridge.vercel.app)** | **[📧 Contact Us](aniketmehra715gmail.com)** | **[⭐ Star on GitHub](https://github.com/Anshulmehra001/LMA-Bridge---AI-Powered-Syndicated-Loan-Lifecycle-Platform)**
 
-*Built for the LMA Edge Hackathon 2025*
+*Built for the LMA Edge Hackathon*
 
 </div>
