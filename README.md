@@ -262,7 +262,7 @@ This roadmap positions LMA Bridge as not just a hackathon project, but as the fo
 ### **Installation**
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/lma-bridge.git
+git clone https://github.com/Anshulmehra001/LMA-Bridge---AI-Powered-Syndicated-Loan-Lifecycle-Platform.git
 cd lma-bridge
 
 # Install dependencies
@@ -286,20 +286,7 @@ npm run lint     # Code quality checks
 
 ---
 
-## 🌐 **Vercel Deployment**
 
-### **One-Click Deploy**
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/lma-bridge)
-
-### **Manual Deployment**
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy to Vercel
-vercel --prod
-
-# Your app will be live at: https://lma-bridge.vercel.app
 ```
 
 ### **Environment Setup**
